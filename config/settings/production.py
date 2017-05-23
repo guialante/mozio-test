@@ -45,12 +45,16 @@ ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['example.com', ])
 # EMAIL
 # ------------------------------------------------------------------------------
 DEFAULT_FROM_EMAIL = env('DJANGO_DEFAULT_FROM_EMAIL',
-                         default='mozio_test <noreply@example.com>')
-EMAIL_SUBJECT_PREFIX = env('DJANGO_EMAIL_SUBJECT_PREFIX', default='[mozio_test]')
+                         default='Guillermo Alvarez <guillermo@guillermoalvarez.co>')
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST_USER = 'guillermo@guillermoalvarez.co'
+EMAIL_SUBJECT_PREFIX = env("DJANGO_EMAIL_SUBJECT_PREFIX", default='[Guillermo Alvarez] ')
 SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
-
-
-EMAIL_BACKEND = 'anymail.backends.mailgun.MailgunBackend'
+EMAIL_HOST = env('DJANGO_EMAIL_HOST', default='smtp.gmail.com')
+EMAIL_HOST_PASSWORD = env("DJANGO_EMAIL_PASSWORD")
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
 
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------
