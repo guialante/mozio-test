@@ -14,8 +14,24 @@ from . serializers import ProviderSerializer, ServiceAreaSerializer
 
 
 class ProviderViewSet(viewsets.ModelViewSet):
-    """
-        Provider API View, this view has all the CRUD methods(endpoints) of the Provider
+    """    
+        retrieve:
+        Return the given provider
+        
+        list:
+        Return a list of all providers
+        
+        create:
+        Create a new provider
+        
+        update:
+        Update the given provider
+        
+        partial_update:
+        Make a partial update of the given provider
+        
+        destroy:
+        Delete the given provider        
     """
 
     queryset = Provider.objects.all()
@@ -23,8 +39,25 @@ class ProviderViewSet(viewsets.ModelViewSet):
 
 
 class ServiceAreaViewSet(viewsets.ModelViewSet):
-    """
-        Service Area API View, this view has all the CRUD methods(endpoints) of the Service Area
+    """    
+        retrieve:
+        Return the given service area
+
+        list:
+        Return a list of all service areas
+
+        create:
+        Create a new service area
+
+        update:
+        Update the given service area
+
+        partial_update:
+        Make a partial update of the given service area
+
+        destroy:
+        Delete the given service area
+        
     """
 
     queryset = ServiceArea.objects.all()
@@ -32,11 +65,12 @@ class ServiceAreaViewSet(viewsets.ModelViewSet):
 
     @list_route(methods=['get'], url_path='search')
     def search(self, request):
-        """
-        
-        :param request: 
-        :return: queryset with the results of the search using lat and lng if the point exists, return empty
+        """        
+        Return a queryset with the results of the search using lat and lng if the point exists, return empty
         queryset otherwise.
+        
+        Use as following example: /service-area/search/?lat=37.78441844686463&lng=-122.47266769409178
+        
         """
 
         queryset = self.get_queryset()

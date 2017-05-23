@@ -40,3 +40,10 @@ Install Requirements
 
 
 
+API Docs
+~~~~~~~~~~~~~~~~~~~~
+
+::
+
+  /docs/
+

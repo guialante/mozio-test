@@ -8,6 +8,9 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
+from rest_framework.documentation import include_docs_urls
+
+
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),
 
@@ -15,6 +18,8 @@ urlpatterns = [
 
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),
+
+    url(r'^docs/', include_docs_urls(title='Mozio Test API Docs'))
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
