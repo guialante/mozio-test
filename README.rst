@@ -31,3 +31,12 @@ Running tests with py.test
 
 
 
+Install Requirements
+~~~~~~~~~~~~~~~~~~~~
+
+::
+
+  $ pip install -r requirements/local.txt
+
+
+
