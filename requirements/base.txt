@@ -34,5 +34,8 @@ redis>=2.10.5
 
 celery==3.1.25
 
-
 djangorestframework==3.6.3
+djangorestframework-gis==0.11.2
+coreapi==2.3.0
+Pygments==2.2.0
+Markdown==2.6.8
