@@ -39,11 +39,18 @@ Install Requirements
   $ pip install -r requirements/local.txt
 
 
+Server Link
+~~~~~~~~~~~
+
+::
+
+ http://ec2-54-186-45-56.us-west-2.compute.amazonaws.com
+
 
 API Docs
 ~~~~~~~~~~~~~~~~~~~~
 
 ::
 
-  /docs/
+  http://ec2-54-186-45-56.us-west-2.compute.amazonaws.com/docs/
 
